@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>FOSS Finder - Free and Open Source Software for All!</title>
+	<link rel="stylesheet" type="text/css" href="/FossFinder/SoftwareSubmissionPage/static/style.css">
+</head>
+<body>
+	<header>
+		<h1>FOSS Finder</h1>
+    <form class="search-bar" action="#" method="get">
+      <input type="text" name="search" placeholder="Search...">
+      <button type="submit">Search</button>
+    </form>
+	</header>
+	<main>
+		<form>
+			<fieldset>
+				<legend>Add Software to Database</legend>
+                {% csrf_token %}
+                {{form}}
+                <input type="submit" value="Add Software">
+			</fieldset>
+	</main>
+</body>
+</html>
+{% endblock %}
