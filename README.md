@@ -3,7 +3,7 @@
 
 FOSS Finder is a free and open-source software alternative recommendation website. The website allows users to find free and open-source alternatives to proprietary software across different categories such as office suites, multimedia tools, developer tools, and more. FOSS Finder is currently being built and maintained by a team of students.
 
-### Features
+### Proposed Features
 
 * Browse different categories of software alternatives
 * Filter results based on platform, license, and popularity
