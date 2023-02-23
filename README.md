@@ -13,7 +13,7 @@ FOSS Finder is a free and open-source software alternative recommendation websit
 
 ### Getting Started
 
-To get started with FOSS Finder, you can browse different categories of software alternatives, search for specific software titles, and filter results based on your preferences.
+To get started with FOSS Finder, clone the repository and enter the foss-finder/FossFinder directory using a terminal. Then run the command "python manage.py runserver" to see a local version of the server. Intended features will allow you to browse different categories of software alternatives, search for specific software titles, and filter results based on your preferences.
 
 ### Contributors
 
