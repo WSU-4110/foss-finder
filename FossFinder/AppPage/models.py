@@ -4,4 +4,4 @@ from django.db import models
 class Software(models.Model):
     title = models.CharField(max_length=25)
     description = models.TextField()
-    image = models.FilePathField(path="/img")
+    image = models.URLField()

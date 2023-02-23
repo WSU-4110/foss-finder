@@ -4,27 +4,148 @@
 {% block page_content %}
 <!DOCTYPE html>
 <html>
-<head>
-	<title>FOSS Finder - Free and Open Source Software for All!</title>
-	<link rel="stylesheet" type="text/css" href="/FossFinder/SoftwareSubmissionPage/static/style.css">
-</head>
-<body>
-	<header>
-		<h1>FOSS Finder</h1>
-    <form class="search-bar" action="#" method="get">
-      <input type="text" name="search" placeholder="Search...">
-      <button type="submit">Search</button>
-    </form>
-	</header>
-	<main>
-		<form>
-			<fieldset>
-				<legend>Add Software to Database</legend>
-                {% csrf_token %}
-                {{form}}
-                <input type="submit" value="Add Software">
-			</fieldset>
-	</main>
-</body>
+  <head>
+    <meta charset="UTF-8">
+    <title>FOSS Software Submission</title>
+    <style>
+      /* Style the form container */
+      .form-container {
+        max-width: 600px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: #f2f2f2;
+        border-radius: 5px;
+      }
+
+      /* Style the form fields */
+      input[type="text"], select, textarea {
+        width: 100%;
+        padding: 12px;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+        margin-top: 6px;
+        margin-bottom: 16px;
+        resize: vertical;
+      }
+
+      /* Style the category checkboxes */
+      .category {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      /* Style the OS checkboxes */
+      .os {
+        display: inline-block;
+        margin-right: 10px;
+      }
+
+      /* Style the submit button */
+      input[type="submit"] {
+        background-color: #4CAF50;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      /* Center the submit button */
+      .submit-button {
+        text-align: center;
+      }
+
+      /* Style the form header */
+      h2 {
+        text-align: center;
+      }
+
+      /* Style the required field indicator */
+      .required::before {
+        content: "*";
+        color: red;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form-container">
+      <h2>FOSS Software Submission</h2>
+      <form action="" method="post">
+        {% csrf_token %}
+        <label for="{{ form.name }} <span class="required"> </span>Software Name:</label>
+        {{ form.name }}
+
+        <label for="{{ form.developer }} <span class="required"> </span>Software Developer:</label>
+        {{ form.developer }}
+
+        <label for="{{ form.description }} <span class="required"> </span>Software Description:</label>
+        {{ form.description }}
+        
+        <br>
+        <br>
+
+        <label for="{{ form.image }} <span class="required"> </span>Software Thumbnail:</label>
+        {{ form.image }}
+
+        <br>
+        <br>
+
+        <label><span class="required"> </span>Software Type:</label><br>
+        
+        <label for="{{ form.tag_WordProcesser }} Word Processor</label>
+        {{ form.tag_WordProcesser }}
+
+        <label for="{{ form.tag_SpreadSheet }} Spreadsheet Editor</label>
+        {{ form.tag_SpreadSheet }}
+
+        <label for="{{ form.tag_FileShare }} File Sharing</label>
+        {{ form.tag_FileShare }}
+        
+        <label for="{{ form.tag_AudioEditor }} Audio Editing</label>
+        {{ form.tag_AudioEditor }}
+
+        <label for="{{ form.tag_GraphicsEditor }} Graphical Editing</label>
+        {{ form.tag_GraphicsEditor }}
+
+        <label for="{{ form.tag_AntiVirus }} Antivirus</label>
+        {{ form.tag_AntiVirus }}
+
+        <label for="{{ form.tag_Communication }} Communication</label>
+        {{ form.tag_Communication }}
+
+        <label for="{{ form.tag_DiskBurner }} Disk Burning Software</label>
+        {{ form.tag_DiskBurner }}
+
+        <label for="{{ form.tag_Multimedia }} Multimedia</label>
+        {{ form.tag_Multimedia }}
+
+        <label for="{{ form.tag_CodeEditor }} Code Editor</label>
+        {{ form.tag_CodeEditor }}
+
+		    <label for="{{ form.tag_Other }} Other</label>
+        {{ form.tag_Other }}
+
+		    <br>
+		    <br>
+
+		    <label><span class="required"> </span>Compatible Operating Systems:</label><br>
+
+		    <label for="{{ form.os_WIN }} Windows</label>
+        {{ form.os_WIN }}
+
+		    <label for="{{ form.os_MAC }} Mac OS X</label>
+        {{ form.os_MAC }}
+
+		    <label for="{{ form.os_NIX }} Linux</label>
+        {{ form.os_NIX }}
+
+
+		    <div class="submit-button">
+		    	<input type="submit" value="Submit">
+		    </div>
+	    </form>
+	  </div>
+  </body>
 </html>
 {% endblock %}

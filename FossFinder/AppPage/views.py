@@ -1,6 +1,8 @@
 from django.shortcuts import render
 from AppPage.models import Software
 
+from SoftwareSubmissionPage.models import SubmittedSoftware
+
 # Create your views here.
 def software_index(request):
     software = Software.objects.all()
