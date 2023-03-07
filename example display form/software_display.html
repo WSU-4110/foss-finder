@@ -18,11 +18,11 @@
 	</header>
 	<main>
 		<div class="display_grid_container">
-            <div class="display_grid_item dgitem_thumbnail_link"><img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_120,h_120/https://dashboard.snapcraft.io/site_media/appmedia/2022/09/icon.svg_oGCNTPU.png" alt="insert thumbnail link" width="100px" height="100px"></div>
-            <div class="display_grid_item dgitem_name">OpenJDK</div>
+            <div class="display_grid_item dgitem_thumbnail_link"><img src="{% static SubmittedSoftware.image %}" alt="insert thumbnail link" width="100px" height="100px"></div>
+            <div class="display_grid_item dgitem_name">{{ SubmittedSoftware.name }}</div>
             <div class="display_grid_item dgitem_rating">Rating</div>
             <div class="display_grid_item dgitem_download_link"><a href="https://jdk.java.net/19/">Download</a></div>
-            <div class="display_grid_item dgitem_developers">Developer(s): Oracle, OpenJDK and Java Community, Red Hat, Azul Systems, IBM, Microsoft, Amazon, Apple, SAP</div>
+            <div class="display_grid_item dgitem_developers">{{ SubmittedSoftware.description }}</div>
             <div class="display_grid_item dgitem_operating_systems">Operating System(s): Linux, Mac OS X, Windows</div>
             <div class="display_grid_item dgitem_license">License: GPL-2.0</div>
             <div class="display_grid_item dgitem_description">Description: Java here, Java there, Java everywhere! Java here, Java there, Java everywhere! Java here, Java there, Java everywhere! Java here, Java there, Java everywhere! Java here, Java there, Java everywhere! Java here, Java there, Java everywhere! Java here, Java there, Java everywhere!</div>
