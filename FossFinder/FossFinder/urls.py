@@ -20,6 +20,7 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     #path('AppPage/', include("AppPage.urls")),
     path('', include("AppPage.urls")),
-    path('SoftwareSubmissionPage/', include("SoftwareSubmissionPage.urls"))
+    path('SoftwareSubmissionPage/', include("SoftwareSubmissionPage.urls")),
     #without webpage/ it will update the main page, with it the /webpage is where it is applied
+    path('AboutPage/', include("AboutPage.urls")),
 ]
