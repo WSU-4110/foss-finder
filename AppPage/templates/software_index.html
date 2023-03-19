@@ -1,0 +1,23 @@
+
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+<h1>Software</h1>
+<div class="row">
+{% for Software in AppPage %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static Software.image %}">
+            <div class="card-body">
+                <h5 class="card-title">{{ Software.title }}</h5>
+                <p class="card-text">{{ Software.description }}</p>
+                <a href="{% url 'software_detail' Software.pk %}"
+                   class="btn btn-primary">
+                    Read More
+                </a>
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}
