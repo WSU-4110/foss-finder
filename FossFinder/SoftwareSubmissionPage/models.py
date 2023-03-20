@@ -1,4 +1,6 @@
 from django.db import models
+from django.contrib.auth.models import User #For Assignment 4
+from django.db.models import Avg #For Assignment 4
 
 # Create your models here.
 class SubmittedSoftware(models.Model):
@@ -29,3 +31,37 @@ class SubmittedSoftware(models.Model):
     # url feild worked to upload to database
     # while image feild works to view image
     # id 1 has imagefield 2 has urlfield
+
+class Post(models.Model): #Here and below is for Assignment 4
+    header = models.CharField(max_length=100, default="Header")
+    text = models.TextField()
+
+    def average_rating(self) -> float:
+        return Rating.objects.filter(post=self).aggregate(Avg("rating"))["rating__avg"] or 0
+
+    def __str__(self):
+        return f"{self.header}: {self.average_rating()}"
+
+singleton1 = Post()
+new_singleton1 = Post()
+
+print(singleton1 is new_singleton1)
+ 
+singleton1.singl_variable = "Singleton Variable"
+print(new_singleton1.singl_variable)
+
+class Rating(models.Model):
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    post = models.ForeignKey(Post, on_delete=models.CASCADE)
+    rating = models.IntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.post.header}: {self.rating}"
+    
+singleton2 = Rating()
+new_singleton2 = Rating()
+
+print(singleton2 is new_singleton2)
+ 
+singleton2.singl_variable = "Singleton Variable"
+print(new_singleton2.singl_variable)
