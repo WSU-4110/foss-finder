@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block page_content %}
+<h1>{{ SubmittedSoftware.name }}</h1>
+<h5>Developer: {{SubmittedSoftware.developer}}</h5>
+<div class="row">
+    <div class="col-md-8">
+        <img src="{% static SubmittedSoftware.image %}" alt="" width="100%">
+    </div>
+    <div class="col-md-4">
+        <h5>About the software:</h5>
+        <p>{{ SubmittedSoftware.description }}</p>
+    </div>
+</div>
+
+{% endblock %}
