@@ -2,6 +2,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block page_content %}
+
 <h1>Software</h1>
 <div class="row">
 {% for Software in AppPage %}
@@ -21,3 +22,11 @@
     {% endfor %}
 </div>
 {% endblock %}
+<script src="{% static script.js %}"></script>
+<script>
+    function addDarkmodeWidget(){
+      new Darkmode().showWidget();
+  
+    }
+    window.addEventListener('load', addDarkmodeWidget);
+    </script>
