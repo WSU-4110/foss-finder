@@ -39,6 +39,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'AppPage',
     'SoftwareSubmissionPage',
+    'bug_report',
     'AboutPage',
 ]
 
