@@ -28,8 +28,8 @@ class SubmittedSoftware(models.Model):
 
     image = models.ImageField(upload_to="img/")
     #image = models.URLField(max_length=200)
-    # url feild worked to upload to database
-    # while image feild works to view image
+    # url field worked to upload to database
+    # while image field works to view image
     # id 1 has imagefield 2 has urlfield
 
 class Post(models.Model): #Here and below is for Assignment 4
