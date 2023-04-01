@@ -1,13 +1,13 @@
 const options = {
-bottom: '15px', // default: '32px'
-  right: 'unset', // default: '32px'
+  bottom: '15px', // default: '32px'
+  right: '15', // default: '32px'
   left: 'unset', // default: 'unset'
-  time: '0.5s', // default: '0.3s'
-  mixColor: '#fff', // default: '#fff'
-  backgroundColor: '#fff',  // default: '#fff'
+  time: '0.3s', // default: '0.3s'
+  mixColor: '##5A5A5A', // default: '#fff'
+  backgroundColor: '##5A5A5A',  // default: '#fff'
   buttonColorDark: '#100f2c',  // default: '#100f2c'
   buttonColorLight: '#fff', // default: '#fff'
-  saveInCookies: false, // default: true,
+  saveInCookies: true, // default: true,
   label: '🌓',  // default: ''
   autoMatchOsTheme: true // default: true
 }

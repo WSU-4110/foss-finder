@@ -16,6 +16,10 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import include, path
 
+from django.contrib.staticfiles.storage import staticfiles_storage
+from django.views.generic.base import RedirectView
+
+
 urlpatterns = [
     path('admin/', admin.site.urls),
     #path('AppPage/', include("AppPage.urls")),
@@ -23,5 +27,6 @@ urlpatterns = [
     path('SoftwareSubmissionPage/', include("SoftwareSubmissionPage.urls")),
     #without webpage/ it will update the main page, with it the /webpage is where it is applied
     path('AboutPage/', include("AboutPage.urls")),
-    path('ReportBugs/', include("bug_report.urls"))
+    path('ReportBugs/', include("bug_report.urls")),
+    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/favicon.ico')))
 ]
