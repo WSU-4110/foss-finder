@@ -20,4 +20,64 @@
     </div>
     {% endfor %}
 </div>
+
+<head>
+	<title>FossFinder</title>
+	<style>
+		body {
+			background-color: #F0F0F0;
+			font-family: Arial, sans-serif;
+			font-size: 35px;
+			line-height: 1.5;
+		}
+		.circle {
+			display: inline-block;
+			width: 300px;
+			height: 300px;
+			background-color: #888888;
+			color: #FFFFFF;
+			border-radius: 75%;
+			text-align: center;
+			vertical-align: middle;
+			line-height: 100px;
+			margin: 10px;
+			cursor: pointer;
+			transition: transform 0.2s ease-in-out;
+		}
+		.circle:hover, .circle.active {
+			transform: scale(1.1);
+		}
+	</style>
+</head>
+<body>
+	<a href="https://example.com/word_processor"><div class="circle"><br>Writing</div></a>
+	<a href="https://example.com/spreadsheet_editor"><div class="circle"><br>Spreadsheets</div></a>
+	<a href="https://example.com/file_sharing"><div class="circle"><br>File Sharing</div></a>
+	<a href="https://example.com/audio_editing"><div class="circle"><br>Audio/DAW</div></a>
+	<a href="https://example.com/graphical_editing"><div class="circle"><br>Graphics</div></a>
+	<a href="https://example.com/antivirus"><div class="circle"><br>Antivirus</div></a>
+	<a href="https://example.com/communication"><div class="circle"><br>Social</div></a>
+	<a href="https://example.com/disk_burning_software"><div class="circle"><br>Disk Burning</div></a>
+	<a href="https://example.com/multimedia"><div class="circle"><br>Multimedia</div></a>
+	<a href="https://example.com/code_editor"><div class="circle"><br>Coding</div></a>
+	<a href="https://example.com/other"><div class="circle"><br>Other</div></a>
+
+	<script>
+		// Add click event listeners to all circle elements
+		var circles = document.querySelectorAll('.circle');
+		for (var i = 0; i < circles.length; i++) {
+			circles[i].addEventListener('click', function(e) {
+				// Prevent default anchor behavior when the circle is clicked
+				e.preventDefault();
+				// Toggle 'active' class on clicked element
+				this.classList.toggle('active');
+				// Navigate to the link destination after a short delay
+				var href = this.parentElement.href;
+				setTimeout(function() {
+					window.location.href = href;
+				}, 300);
+			});
+		}
+	</script>
+</body>
 {% endblock %}
