@@ -29,3 +29,5 @@ class SubmittedSoftware(models.Model):
     # url feild worked to upload to database
     # while image feild works to view image
     # id 1 has imagefield 2 has urlfield
+    def __unicode__(self):
+        return self.name
