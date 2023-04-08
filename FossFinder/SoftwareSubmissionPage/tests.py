@@ -47,15 +47,21 @@ class TestSoftwareSubmit(TestCase):
 
 
 class TestView(unittest.TestCase): 
-    def test_software_submit_view(self):
+    def test_software_submit_button(self):
         self.driver = webdriver.Firefox()
         self.driver.get("http://localhost:8000/SoftwareSubmissionPage")
-        self.driver.find_element(By.XPATH, "//*[@id='id_name']").send_keys("test name")
+        #self.driver.find_element(By.XPATH, "//*[@id='id_name']").send_keys("test name")
         #self.driver.find_element(By.NAME, 'id_name').send_keys("test name")
-        #self.driver.find_element(By.NAME, 'developer').send_keys("test developer")  //*[@id="id_name"]
-        
-        self.driver.find_element(By.NAME, 'submit').click()
+        self.driver.find_element(By.XPATH, '//*[@id="id_tag_WordProcesser"]').click()
         self.assertIn("http://localhost:8000/", self.driver.current_url)
         self.driver.quit()
+
+    def test_software_submit_tags(self):
+        self.driver = webdriver.Firefox()
+        self.driver.get("http://localhost:8000/SoftwareSubmissionPage")
+        self.driver.find_element(By.XPATH, '//*[@id="id_tag_WordProcesser"]').click()
+        self.assertIn("http://localhost:8000/", self.driver.current_url)
+        self.driver.quit()
+        
     if __name__ == '__main__':
         unittest.main()
