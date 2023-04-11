@@ -16,13 +16,6 @@ class TestSoftwareSubmit(TestCase):
         x = self.create_Software()
         self.assertTrue(isinstance(x, SubmittedSoftware))
         self.assertEqual(x.__unicode__(), x.name)
-
-    #def test_software_submit_view(self):
-    #    x = self.create_Software()
-    #    url = reverse("SoftwareSubmissionPage.views.software_submit")
-    #    resp = self.client.get(url)
-    #    self.assertEqual(resp.status_code, 200)
-    #    self.assertIn(x.name, resp.content)
     
     def test_form_valid(self):
         #x = SubmittedSoftware.objects.create(name='name test', developer='dev test', description='desc test', tag_WordProcesser=True, tag_SpreadSheet=True, tag_GraphicsEditor=False, tag_AudioEditor=False, tag_Communication=False, tag_Multimedia=False, tag_AntiVirus=False, tag_CodeEditor=False, tag_DiskBurner=False, tag_FileShare=False, tag_Other=False, os_WIN=True, os_MAC=False, os_NIX=False, image='img/audacity.png')
@@ -56,12 +49,19 @@ class TestView(unittest.TestCase):
         self.assertIn("http://localhost:8000/", self.driver.current_url)
         self.driver.quit()
 
-    def test_software_submit_tags(self):
+    def test_software_submit_tags_valid(self):
         self.driver = webdriver.Firefox()
         self.driver.get("http://localhost:8000/SoftwareSubmissionPage")
         self.driver.find_element(By.XPATH, '//*[@id="id_tag_WordProcesser"]').click()
         self.assertIn("http://localhost:8000/", self.driver.current_url)
         self.driver.quit()
-        
+
+    def test_software_submit_tags_invalid(self):
+        self.driver = webdriver.Firefox()
+        self.driver.get("http://localhost:8000/SoftwareSubmissionPage")
+        self.driver.find_element(By.XPATH, '//*[@id="id_tag_WordProcesser"]').send_keys("words")
+        self.assertIn("http://localhost:8000/", self.driver.current_url)
+        self.driver.quit()
+
     if __name__ == '__main__':
         unittest.main()
