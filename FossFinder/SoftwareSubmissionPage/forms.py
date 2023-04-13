@@ -13,3 +13,4 @@ class SubmitSoftwareForm(forms.ModelForm):
             'Communication': "tag_Communication", 'Multimedia': "tag_Multimedia", 'AntiVirus': "tag_AntiVirus", 'Code Editor': "tag_CodeEditor", 
             'Disk Burner': "tag_DiskBurner", 'File Sharing': "tag_FileShare", 'Other': "tag_Other", 'Windows': "os_WIN", 
             'Mac OS X': "os_MAC", 'Linux': "os_NIX", 'image': "image",}
+
