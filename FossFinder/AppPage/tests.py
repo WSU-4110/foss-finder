@@ -36,3 +36,10 @@ class ImageUrlParserTestCase(TestCase):
         image_url = 'https://picsum.photos/200/300.jpg'
         extension = ImageUrlParser.get_image_extension_from_url(image_url)
         self.assertEqual(extension, '.jpg')
+
+    """Dog Test for External Image"""
+    def test_is_external_image_url(self):
+        external_image_url = 'https://picsum.photos/id/237/200/300.jpg'
+        internal_image_url = '/images/image.jpg'
+        self.assertTrue(ImageUrlParser.is_external_image_url(external_image_url))
+        self.assertFalse(ImageUrlParser.is_external_image_url(internal_image_url))
