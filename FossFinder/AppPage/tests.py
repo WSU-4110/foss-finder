@@ -49,3 +49,10 @@ class ImageUrlParserTestCase(TestCase):
         image_url = 'https://picsum.photos/id/237/200/300.jpg'
         domain = ImageUrlParser.get_image_domain(image_url)
         self.assertEqual(domain, 'picsum.photos')
+
+    """Dog Test for Ensuring Image URL is Secure"""
+    def test_is_secure_image_url(self):
+        secure_image_url = 'https://picsum.photos/seed/picsum/200/300.jpg'
+        insecure_image_url = 'http://picsum.photos/seed/picsum/200/300.jpg'
+        self.assertTrue(ImageUrlParser.is_secure_image_url(secure_image_url))
+        self.assertFalse(ImageUrlParser.is_secure_image_url(insecure_image_url))
