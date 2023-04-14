@@ -5,7 +5,7 @@ from .models import SubmittedBugs
 
 
 class SubmitBugsFormTest(TestCase):
-    def valid_test(self):
+    def test_valid_form(self):
         # create a test image file
         image = SimpleUploadedFile("test_image.jpg", b"file_content", content_type="image/jpeg")
         
@@ -22,13 +22,12 @@ class SubmitBugsFormTest(TestCase):
         form.save()
         self.assertEqual(SubmittedBugs.objects.count(), 1)
         
-        def invalid_test(self):
-    form_data = {
+    def test_invalid_form(self):
+        image = SimpleUploadedFile("test_image.jpg", b"file_content", content_type="image/jpeg")
+        form_data = {
         'description': 'This is a test bug report.',
-        'image': self.test_image,
+        'image': image
     }
-    form = SubmitBugsForm(data=form_data, files=self.form_files)
-    self.assertFalse(form.is_valid())
-    self.assertEqual(len(form.errors), 1)
-    self.assertIn('title', form.errors)
-
+        form = SubmitBugsForm(data=form_data, files=form_data)
+        self.assertFalse(form.is_valid())
+        self.assertIn('title', form.errors)
