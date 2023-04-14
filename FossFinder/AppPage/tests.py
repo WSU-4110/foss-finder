@@ -24,4 +24,11 @@ class ImageUrlParserTestCase(TestCase):
         filename = ImageUrlParser.get_image_filename_from_url(image_url)
         self.assertEqual(filename, '300.jpg')
 
+    """Ice Test"""
+    def test_is_valid_image_url(self):
+        valid_image_url = 'https://picsum.photos/seed/picsum/200/300.jpg'
+        invalid_image_url = 'https://example.com/files/document.pdf'
+        self.assertTrue(ImageUrlParser.is_valid_image_url(valid_image_url))
+        self.assertFalse(ImageUrlParser.is_valid_image_url(invalid_image_url))
+
     
