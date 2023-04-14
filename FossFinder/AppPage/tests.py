@@ -43,3 +43,9 @@ class ImageUrlParserTestCase(TestCase):
         internal_image_url = '/images/image.jpg'
         self.assertTrue(ImageUrlParser.is_external_image_url(external_image_url))
         self.assertFalse(ImageUrlParser.is_external_image_url(internal_image_url))
+
+    """Dog Test for acquiring Image Domain"""
+    def test_get_image_domain(self):
+        image_url = 'https://picsum.photos/id/237/200/300.jpg'
+        domain = ImageUrlParser.get_image_domain(image_url)
+        self.assertEqual(domain, 'picsum.photos')
