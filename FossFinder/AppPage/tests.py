@@ -31,4 +31,8 @@ class ImageUrlParserTestCase(TestCase):
         self.assertTrue(ImageUrlParser.is_valid_image_url(valid_image_url))
         self.assertFalse(ImageUrlParser.is_valid_image_url(invalid_image_url))
 
-    
+    """Extension Test"""
+    def test_get_image_extension_from_url(self):
+        image_url = 'https://picsum.photos/200/300.jpg'
+        extension = ImageUrlParser.get_image_extension_from_url(image_url)
+        self.assertEqual(extension, '.jpg')
