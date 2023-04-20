@@ -6,10 +6,9 @@ FOSS Finder is a free and open-source software alternative recommendation websit
 ### Proposed Features
 
 * Browse different categories of software alternatives
-* Filter results based on platform, license, and popularity
-* View detailed information about each software alternative, including its features, user reviews, and download links
+* View detailed information about each software alternative, including its features, user ratings, and download links
 * Submit new software alternatives to be added to the website
-* Review existing alternatives to help others find the best options
+* Rate existing alternatives to help others find the best options
 
 ### Getting Started
 
