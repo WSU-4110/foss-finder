@@ -29,5 +29,6 @@ urlpatterns = [
     #without webpage/ it will update the main page, with it the /webpage is where it is applied
     path('AboutPage/', include("AboutPage.urls")),
     path('ReportBugs/', include("bug_report.urls")),
-    path('FOSSGUY2.png', RedirectView.as_view(url=staticfiles_storage.url('img/FOSSGUY2.png')))
+    path('FOSSGUY2.png', RedirectView.as_view(url=staticfiles_storage.url('img/FOSSGUY2.png'))),
+    path('ratings/', include('star_ratings.urls', namespace='ratings')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

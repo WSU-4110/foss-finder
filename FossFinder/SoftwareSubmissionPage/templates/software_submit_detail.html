@@ -1,5 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
+{% load ratings %}
 
 {% block page_content %}
 <h1>{{ SubmittedSoftware.name }}</h1>
@@ -11,6 +12,7 @@
     <div class="col-md-4">
         <h5>About the software:</h5>
         <p>{{ SubmittedSoftware.description }}</p>
+        {% ratings SubmittedSoftware %}
     </div>
 </div>
 
