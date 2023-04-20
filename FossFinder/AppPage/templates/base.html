@@ -60,26 +60,13 @@
        <body> 
        <div id="theme-btn" class="far fa-moon"></div>
         <script>
-          const themeBtn = document.getElementById("theme-btn"); 
-          const darkTheme = document.getElementById(".dark-theme");
-          themeBtn.onclick = () =>{
-            themeBtn.classList.toggle("fa-sun");
-            if(themeBtn.classList.contains("fa-sun")){
-              document.body.classList.add("changeTheme");
-              for(const theme of darkTheme){
-                theme.style.backgroundColor= "##5A5A5A";
-                theme.style.color= "#eee";
-              }
-            }
-            else{
-              document.body.classList.remove("changeTheme");
-              for(const theme of darkTheme){
-                theme.style.backgroundColor = "#eee";
-                theme.style.color = "#5A5A5A";
-              }
-            }
-          }
-        </script>
+  const themeBtn = document.getElementById("theme-btn"); 
+  themeBtn.onclick = () =>{
+    themeBtn.classList.toggle("fa-sun");
+    document.body.classList.toggle("changeTheme");
+  }
+</script>
+
        </body>
       </nav>
 <div class="container .dark-theme">
@@ -87,18 +74,6 @@
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-<script>
-  var darkmode = new Darkmode();
-  
-  function toggleDarkMode(){
-    if(darkmode.isActivated()){
-      document.getElementById("darkmode-icon").className = "fa fa-moon";
-    }
-    else{
-      document.getElementById("darkmode-icon").className = "fa fa-sun";
-    }
-    darkmode.toggle();
-  }
-</script>
+
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRV
