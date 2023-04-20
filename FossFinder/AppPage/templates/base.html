@@ -47,17 +47,19 @@
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'bug_submit' %}">Report Bugs</a>
             </li>
-            <li><button onclick="toggleDarkMode()"><i id="darkmode-icon" class="fa fa-moon"></i></button></li>
-          </ul>
+			
+            <!--<li><button onclick="toggleDarkMode()"><i id="darkmode-icon" class="fa fa-moon"></i></button></li>
+          </ul>-->
        
     <script>
       function addDarkmodeWidget(){
         new Darkmode().showWidget();
-    
+		
       }
+	  
       window.addEventListener('load', addDarkmodeWidget);
       </script>
-       <body> 
+      <!-- <body> 
        <div id="theme-btn" class="far fa-moon"></div>
         <script>
   const themeBtn = document.getElementById("theme-btn"); 
@@ -65,7 +67,7 @@
     themeBtn.classList.toggle("fa-sun");
     document.body.classList.toggle("changeTheme");
   }
-</script>
+</script>-->
 
        </body>
       </nav>
