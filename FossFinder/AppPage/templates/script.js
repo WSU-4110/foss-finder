@@ -1,6 +1,6 @@
 const options = {
   bottom: '15px', // default: '32px'
-  right: '15', // default: '32px'
+  right: '15px', // default: '32px'
   left: 'unset', // default: 'unset'
   time: '0.3s', // default: '0.3s'
   mixColor: '##5A5A5A', // default: '#fff'
