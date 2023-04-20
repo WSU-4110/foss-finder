@@ -28,5 +28,5 @@ urlpatterns = [
     #without webpage/ it will update the main page, with it the /webpage is where it is applied
     path('AboutPage/', include("AboutPage.urls")),
     path('ReportBugs/', include("bug_report.urls")),
-    path('favicon.ico', RedirectView.as_view(url=staticfiles_storage.url('img/favicon.ico')))
+    path('FOSSGUY2.png', RedirectView.as_view(url=staticfiles_storage.url('img/FOSSGUY2.png')))
 ]
