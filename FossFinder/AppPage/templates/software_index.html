@@ -14,7 +14,7 @@
 			border-radius: 75%;
 			text-align: center;
 			vertical-align: middle;
-			line-height: 100px;
+			line-height: 50px;
 			margin: 10px;
 			cursor: pointer;
 			transition: transform 0.2s ease-in-out;
@@ -26,21 +26,90 @@
 			transform: scale(1.05);
 			filter: brightness(110%);
 		}
+		.circle-text {
+			font-size: 18px;
+			margin-top: 5px;
+		}
+
 	</style>
 </head>
 <body>
 	
-	<a href="{% url 'WordProcessers' %}"><div class="circle"><br>Writing</div></a>
-	<a href="{% url 'SpreadSheets' %}"><div class="circle"><br>Spreadsheets</div></a>
-	<a href="{% url 'FileShare' %}"><div class="circle"><br>File Sharing</div></a>
-	<a href="{% url 'AudioEditors' %}"><div class="circle"><br>Audio/DAW</div></a>
-	<a href="{% url 'GraphicsEditors' %}"><div class="circle"><br>Graphics</div></a>
-	<a href="{% url 'AntiVirus' %}"><div class="circle"><br>Antivirus</div></a>
-	<a href="{% url 'Communication' %}"><div class="circle"><br>Social</div></a>
-	<a href="{% url 'DiskBurners' %}"><div class="circle"><br>Disk Burning</div></a>
-	<a href="{% url 'Multimedia' %}"><div class="circle"><br>Multimedia</div></a>
-	<a href="{% url 'CodeEditor' %}"><div class="circle"><br>Coding</div></a>
-	<a href="{% url 'OtherSoftware' %}"><div class="circle"><br>Other</div></a>
+	<a href="{% url 'WordProcessers' %}">
+  <div class="circle">
+    <br>Writing
+    <div class="circle-text">Compare to:<br>Microsoft Word</div>
+  </div>
+</a>
+	<a href="{% url 'SpreadSheets' %}">
+  <div class="circle">
+    <br>Spreadsheets
+    <div class="circle-text">Compare to:<br>Microsoft Excel</div>
+  </div>
+</a>
+	<a href="{% url 'FileShare' %}">
+  <div class="circle">
+    <br>File Sharing
+    <div class="circle-text">Compare to:<br>Vuze</div>
+  </div>
+</a>
+	<a href="{% url 'AudioEditors' %}">
+  <div class="circle">
+    <br>Audio/DAW
+    <div class="circle-text">Compare to:<br>FL Studio, Pro Tools</div>
+  </div>
+</a>
+	<a href="{% url 'GraphicsEditors' %}">
+  <div class="circle">
+    <br>Graphics
+    <div class="circle-text">Compare to:<br>Adobe Photoshop</div>
+  </div>
+</a>
+	<a href="{% url 'AntiVirus' %}">
+  <div class="circle">
+    <br>Antivirus
+    <div class="circle-text">Compare to:<br>Avast, McAfee</div>
+  </div>
+</a>
+	<a href="{% url 'Communication' %}">
+  <div class="circle">
+    <br>Communication
+    <div class="circle-text">Compare to:<br>Telegram, Twitter, Facebook</div>
+  </div>
+</a>
+</a>
+	<a href="{% url 'DiskBurners' %}">
+  <div class="circle">
+    <br>Disk Burning
+    <div class="circle-text">Compare to:<br>Adobe Encore, DVDFab Products</div>
+  </div>
+</a>
+	<a href="{% url 'Multimedia' %}">
+  <div class="circle">
+    <br>Multimedia
+    <div class="circle-text">Compare to:<br>Windows Media Player, Plex</div>
+  </div>
+</a>
+	<a href="{% url 'CodeEditor' %}">
+  <div class="circle">
+    <br>Coding
+    <div class="circle-text">Compare to:<br>Visual Studio</div>
+  </div>
+</a>
+	<a href="{% url 'OtherSoftware' %}">
+  <div class="circle">
+    <br>Other
+    <div class="circle-text">Compare to:<br>N/A</div>
+  </div>
+</a>
+	
+	
+	
+	
+	
+	
+	
+	
 
 	<script>
 		// Add click event listeners to all circle elements
