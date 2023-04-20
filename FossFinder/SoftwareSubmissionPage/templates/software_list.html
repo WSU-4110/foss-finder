@@ -3,24 +3,33 @@
 {% load ratings %}
 {% block page_content %}
 
-<h1>index</h1>
+<br>
 <div class="row">
 {% for SubmittedSoftware in SubmittedSoftwares %}
     <div class="col-md-4">
-        <div class="card mb-2">
+        <br>
+        <div class="card" style="width: 22rem;">
+            <div class="card-header">
+                <h4 class="card-title">{{ SubmittedSoftware.name }}</h4>
+              </div>
             <img class="card-img-top" src="{{ SubmittedSoftware.image }}">
             <div class="card-body">
-                <h5 class="card-title">{{ SubmittedSoftware.title }}</h5>
                 <p class="card-text">{{ SubmittedSoftware.description }}</p>
-                {% ratings SubmittedSoftware %}
-                <a href="{% url 'software_submit_detail' SubmittedSoftware.pk %}"
-                   class="btn btn-primary">
-                    View Software
-                </a>
-            
+
+
             </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item">{% ratings SubmittedSoftware %}</li>
+                <li class="list-group-item"><a href="{% url 'software_submit_detail' SubmittedSoftware.pk %}"
+                    class="btn btn-primary">
+                     View {{ SubmittedSoftware.name }}
+                 </a></li>
+              </ul>
         </div>
     </div>
+    
     {% endfor %}
 </div>
+<br>
+<br>
 {% endblock %}
