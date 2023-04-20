@@ -24,8 +24,8 @@ class SubmittedSoftware(models.Model):
     os_MAC = models.BooleanField(default=False)
     os_NIX = models.BooleanField(default=False)
 
-    image = models.ImageField(upload_to="img/")
-    #image = models.URLField(max_length=200)
+    #image = models.ImageField(upload_to="img/")
+    image = models.URLField(max_length=200)
     # url feild worked to upload to database
     # while image feild works to view image
     # id 1 has imagefield 2 has urlfield

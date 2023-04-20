@@ -8,7 +8,7 @@
 {% for SubmittedSoftware in SubmittedSoftwares %}
     <div class="col-md-4">
         <div class="card mb-2">
-            <img class="card-img-top" src="{% static SubmittedSoftware.image %}">
+            <img class="card-img-top" src="{{ SubmittedSoftware.image }}">
             <div class="card-body">
                 <h5 class="card-title">{{ SubmittedSoftware.title }}</h5>
                 <p class="card-text">{{ SubmittedSoftware.description }}</p>
