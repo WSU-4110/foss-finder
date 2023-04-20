@@ -38,6 +38,16 @@ ________________________________________________________________________________
     Ethan Laszlo<br>
 </h5>
 
+<!--Dark mode widget-->
+    <script>
+      function addDarkmodeWidget(){
+        new Darkmode().showWidget();
+		
+      }
+	  
+      window.addEventListener('load', addDarkmodeWidget);
+      </script>
 
+<script src="{% static 'js/darkmode-js.min.js' %}"></script>
 
 {% endblock %}
