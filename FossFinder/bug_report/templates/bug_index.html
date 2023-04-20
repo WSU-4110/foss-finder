@@ -1,0 +1,33 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+<br>
+<div class="row">
+{% for SubmittedBugs in bugsSubmitted %}
+    <div class="col-md-4">
+        <br>
+        <div class="card" style="width: 22rem;">
+            <div class="card-header">
+                <h4 class="card-title">{{ SubmittedBugs.title }}</h4>
+              </div>
+            <img class="card-img-top" src="{{ SubmittedBugs.image }}">
+            <div class="card-body">
+                <p class="card-text">{{ SubmittedBugs.description }}</p>
+
+
+            </div>
+            <ul class="list-group list-group-flush">
+                <li class="list-group-item"><a href="{% url 'bug_submit_detail' SubmittedBugs.pk %}"
+                    class="btn btn-primary">
+                     View {{ SubmittedBugs.title }}
+                 </a></li>
+              </ul>
+        </div>
+    </div>
+    
+    {% endfor %}
+</div>
+<br>
+<br>
+{% endblock %}

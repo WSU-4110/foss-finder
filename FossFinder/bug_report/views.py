@@ -17,3 +17,10 @@ def bug_submit_detail(request, pk):
         'SubmittedBugs': bugs
     }
     return render(request, 'bug_submit_detail.html', context)
+
+def buglist_index(request):
+    bugsSubmitted = SubmittedBugs.objects.all()
+    context = {
+        'bugsSubmitted': bugsSubmitted
+    }
+    return render(request, 'bug_index.html', context)
