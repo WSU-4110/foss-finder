@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <head>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
-  <link rel="stylesheet" type="text/css" href="static/css/styles.css">
+  <link rel="stylesheet" type="text/css" href=" {% static 'css/styles.css'} ">
   <link rel="png" type="image/png" href = " {% static 'img/FOSSGUY2.png' %} ">
   <style>
   body {
@@ -12,11 +12,11 @@
   .navbar {
     box-shadow: 0 2px 4px rgba(0,0,0,.5);
   }
-  .navbar-brand img {
-  max-height: 50px;
-  height: auto;
-  width: auto;
-}
+  .navbar-brand img{
+    max-height: 50px;
+    height: auto;
+    width: auto;
+  }
   </style>
 
 </head>
@@ -25,17 +25,16 @@
 
 <link rel="stylesheet" href="{% static 'star-ratings/css/star-ratings.css' %}">
 <script type="text/javascript" src="{% static 'star-ratings/js/dist/star-ratings.min.js' %}"></script>
-
 <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+
     <div class="container">
         <a class="navbar-brand" href="{% url 'software_index' %}">
-  <img src="{% static 'img/fossfinderlogo1.png' %}" alt="FossFinder Logo">
-</a>
-		<!--Sidebar button-->
+          <img src="{% static 'img/fossfinderlogo1.png' %}" alt="FossFinder Logo">
+        </a>
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-		<!--Sidebar behavior-->
+
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
            <li class="nav-item active">
@@ -50,28 +49,29 @@
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'bug_submit' %}">Report Bugs</a>
             </li>
-			
-            
-	<!--Dark mode widget-->
-    <script>
-      function addDarkmodeWidget(){
-        new Darkmode().showWidget();
-		
-      }
-	  
-      window.addEventListener('load', addDarkmodeWidget);
-      </script>
-      
+            <li><button onclick="toggleDarkMode()"><i id="darkmode-icon" class="fa fa-moon"></i></button></li>
+          </ul>
+      </div>
+    </div>
+</nav>
 
-       </body>
-      </nav>
-<div class="container .dark-theme">
+<div class="container">
   {% block page_content %} {% endblock %}
 </div>
 
-<script src="{% static 'js/darkmode-js.min.js' %}"></script>
+<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script>
+  var darkmode = new Darkmode();
+  
+  function toggleDarkMode(){
+    if(darkmode.isActivated()){
+      document.getElementById("darkmode-icon").className = "fa fa-moon";
+    }
+    else{
+      document.getElementById("darkmode-icon").className = "fa fa-sun";
+    }
+    darkmode.toggle();
+  }
+</script>
 
-<!--<script src="{% static 'js/jquery-3.3.1.slim.min.js' %}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRV
-    <script>-->
-      <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-      <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRV
