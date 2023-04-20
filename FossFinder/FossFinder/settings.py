@@ -38,7 +38,6 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'django_filters',
     'AppPage',
     'SoftwareSubmissionPage',
     'bug_report',
@@ -118,7 +117,7 @@ USE_I18N = True
 USE_TZ = True
 
 MEDIA_URL = "/img/"
-MEDIA_ROOT = BASE_DIR / "img"
+MEDIA_ROOT = os.path.join(BASE_DIR, 'img')
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
