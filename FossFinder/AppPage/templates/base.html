@@ -31,11 +31,11 @@
         <a class="navbar-brand" href="{% url 'software_index' %}">
   <img src="{% static 'img/fossfinderlogo1.png' %}" alt="FossFinder Logo">
 </a>
-
+		<!--Sidebar button-->
         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
           <span class="navbar-toggler-icon"></span>
         </button>
-
+		<!--Sidebar behavior-->
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto">
            <li class="nav-item active">
@@ -52,7 +52,7 @@
             </li>
 			
             
-       
+	<!--Dark mode widget-->
     <script>
       function addDarkmodeWidget(){
         new Darkmode().showWidget();
@@ -69,7 +69,7 @@
   {% block page_content %} {% endblock %}
 </div>
 
-<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
+<script src="{% static 'js/darkmode-js.min.js' %}"></script>
 
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRV
+<!--<script src="{% static 'js/jquery-3.3.1.slim.min.js' %}" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRV
+    <script>-->
