@@ -85,46 +85,68 @@
         <br>
         <br>
 
-        <label for="{{ form.image }} <span class="required"> </span>Software Thumbnail:</label>
-        {{ form.image }}
+        <label for="{{ form.image }} <span class="optional"> </span>Software Thumbnail:</label>
+        <input type="file" name="image">
+		<!--{{ form.image }}-->
 
         <br>
         <br>
 
         <label><span class="required"> </span>Software Type:</label><br>
         
+		{{ form.tag_WordProcesser }}
+		
         <label for="{{ form.tag_WordProcesser }} Word Processor</label>
-        {{ form.tag_WordProcesser }}
+        
 		<br>
+		{{ form.tag_SpreadSheet }}
         <label for="{{ form.tag_SpreadSheet }} Spreadsheet Editor</label>
-        {{ form.tag_SpreadSheet }}
+        
 		<br>
+		{{ form.tag_FileShare }}
+		
         <label for="{{ form.tag_FileShare }} File Sharing</label>
-        {{ form.tag_FileShare }}
+        
 		<br>
+		{{ form.tag_AudioEditor }}
+		
         <label for="{{ form.tag_AudioEditor }} Audio Editing</label>
-        {{ form.tag_AudioEditor }}
+        
 		<br>
+		{{ form.tag_GraphicsEditor }}
+		
         <label for="{{ form.tag_GraphicsEditor }} Graphical Editing</label>
-        {{ form.tag_GraphicsEditor }}
+        
 		<br>
+		{{ form.tag_AntiVirus }}
+		
         <label for="{{ form.tag_AntiVirus }} Antivirus</label>
-        {{ form.tag_AntiVirus }}
+        
 		<br>
+		{{ form.tag_Communication }}
+		
         <label for="{{ form.tag_Communication }} Communication</label>
-        {{ form.tag_Communication }}
+        
 		<br>
+		{{ form.tag_DiskBurner }}
+		
         <label for="{{ form.tag_DiskBurner }} Disk Burning Software</label>
-        {{ form.tag_DiskBurner }}
+        
 		<br>
+		{{ form.tag_Multimedia }}
+		
         <label for="{{ form.tag_Multimedia }} Multimedia</label>
-        {{ form.tag_Multimedia }}
+        
 		<br>
+		{{ form.tag_CodeEditor }}
+		
         <label for="{{ form.tag_CodeEditor }} Code Editor</label>
-        {{ form.tag_CodeEditor }}
+        
 		<br>
+		{{ form.tag_Other }}
+		
 		    <label for="{{ form.tag_Other }} Other</label>
-        {{ form.tag_Other }}
+        
 
 		    <br>
 		    <br>
