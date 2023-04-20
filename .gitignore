@@ -1,5 +1,4 @@
 FossFinder/SoftwareSubmissionPage/migrations/__pycache__/0002_rename_tags_submittedsoftware_os_mac_and_more.cpython-311.pyc
-FossFinder/db.sqlite3
 FossFinder/AppPage/__pycache__/__init__.cpython-311.pyc
 FossFinder/AppPage/__pycache__/admin.cpython-311.pyc
 FossFinder/AppPage/__pycache__/admin.cpython-311.pyc
@@ -31,3 +30,18 @@ FossFinder/AppPage/__pycache__/apps.cpython-311.pyc
 FossFinder/AppPage/__pycache__/admin.cpython-311.pyc
 FossFinder/AppPage/__pycache__/__init__.cpython-311.pyc
 
+FossFinder/bug_report/migrations/__pycache__/__init__.cpython-311.pyc
+FossFinder/bug_report/__pycache__/__init__.cpython-311.pyc
+FossFinder/bug_report/__pycache__/admin.cpython-311.pyc
+FossFinder/bug_report/__pycache__/apps.cpython-311.pyc
+FossFinder/bug_report/__pycache__/forms.cpython-311.pyc
+FossFinder/bug_report/__pycache__/models.cpython-311.pyc
+FossFinder/bug_report/__pycache__/urls.cpython-311.pyc
+FossFinder/bug_report/__pycache__/views.cpython-311.pyc
+FossFinder/bug_report/migrations/__pycache__/0001_initial.cpython-311.pyc
+FossFinder/AboutPage/__pycache__/urls.cpython-311.pyc
+FossFinder/AboutPage/__pycache__/views.cpython-311.pyc
+FossFinder/AboutPage/__pycache__/models.cpython-311.pyc
+FossFinder/AboutPage/__pycache__/admin.cpython-311.pyc
+FossFinder/AboutPage/__pycache__/apps.cpython-311.pyc
+FossFinder/AboutPage/__pycache__/__init__.cpython-311.pyc

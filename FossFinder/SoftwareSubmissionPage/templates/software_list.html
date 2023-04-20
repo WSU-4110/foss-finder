@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% load static %}
+{% block page_content %}
+
+<h1>index</h1>
+<div class="row">
+{% for SubmittedSoftware in SubmittedSoftwares %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{% static SubmittedSoftware.image %}">
+            <div class="card-body">
+                <h5 class="card-title">{{ SubmittedSoftware.title }}</h5>
+                <p class="card-text">{{ SubmittedSoftware.description }}</p>
+                
+                <a href="{% url 'software_submit_detail' SubmittedSoftware.pk %}"
+                   class="btn btn-primary">
+                    View Software
+                </a>
+            
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

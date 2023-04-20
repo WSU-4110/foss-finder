@@ -1,25 +1,6 @@
-
 {% extends "base.html" %}
 {% load static %}
 {% block page_content %}
-<h1>Software</h1>
-<div class="row">
-{% for Software in AppPage %}
-    <div class="col-md-4">
-        <div class="card mb-2">
-            <img class="card-img-top" src="{% static Software.image %}">
-            <div class="card-body">
-                <h5 class="card-title">{{ Software.title }}</h5>
-                <p class="card-text">{{ Software.description }}</p>
-                <a href="{% url 'software_detail' Software.pk %}"
-                   class="btn btn-primary">
-                    Read More
-                </a>
-            </div>
-        </div>
-    </div>
-    {% endfor %}
-</div>
 
 <head>
 	<title>FossFinder</title>
@@ -50,17 +31,18 @@
 	</style>
 </head>
 <body>
-	<a href="https://example.com/word_processor"><div class="circle"><br>Writing</div></a>
-	<a href="https://example.com/spreadsheet_editor"><div class="circle"><br>Spreadsheets</div></a>
-	<a href="https://example.com/file_sharing"><div class="circle"><br>File Sharing</div></a>
-	<a href="https://example.com/audio_editing"><div class="circle"><br>Audio/DAW</div></a>
-	<a href="https://example.com/graphical_editing"><div class="circle"><br>Graphics</div></a>
-	<a href="https://example.com/antivirus"><div class="circle"><br>Antivirus</div></a>
-	<a href="https://example.com/communication"><div class="circle"><br>Social</div></a>
-	<a href="https://example.com/disk_burning_software"><div class="circle"><br>Disk Burning</div></a>
-	<a href="https://example.com/multimedia"><div class="circle"><br>Multimedia</div></a>
-	<a href="https://example.com/code_editor"><div class="circle"><br>Coding</div></a>
-	<a href="https://example.com/other"><div class="circle"><br>Other</div></a>
+	
+	<a href="{% url 'WordProcessers' %}"><div class="circle"><br>Writing</div></a>
+	<a href="{% url 'SpreadSheets' %}"><div class="circle"><br>Spreadsheets</div></a>
+	<a href="{% url 'FileShare' %}"><div class="circle"><br>File Sharing</div></a>
+	<a href="{% url 'AudioEditors' %}"><div class="circle"><br>Audio/DAW</div></a>
+	<a href="{% url 'GraphicsEditors' %}"><div class="circle"><br>Graphics</div></a>
+	<a href="{% url 'AntiVirus' %}"><div class="circle"><br>Antivirus</div></a>
+	<a href="{% url 'Communication' %}"><div class="circle"><br>Social</div></a>
+	<a href="{% url 'DiskBurners' %}"><div class="circle"><br>Disk Burning</div></a>
+	<a href="{% url 'Multimedia' %}"><div class="circle"><br>Multimedia</div></a>
+	<a href="{% url 'CodeEditor' %}"><div class="circle"><br>Coding</div></a>
+	<a href="{% url 'OtherSoftware' %}"><div class="circle"><br>Other</div></a>
 
 	<script>
 		// Add click event listeners to all circle elements
@@ -79,5 +61,6 @@
 			});
 		}
 	</script>
+
 </body>
 {% endblock %}
