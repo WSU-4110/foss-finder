@@ -1,19 +1,36 @@
-
 #theme-btn {
-font-size: 1.5rem;
-cursor: pointer;
-color: #596AFF;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #596AFF;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 9999; /* to make sure the button is on top of other elements */
 }
 
 #theme-btn:hover {
-color: #BB86FC;
-}
-body.changeTheme {
-background-color: #5A5A5A !important;
-color: #eee;
-}
-.dark-mode{
-background-color: black;
-color: white;
+  color: #BB86FC;
 }
 
+.changeTheme {
+  background-color: ##5A5A5A;
+  color: #eee;
+}
+
+.dark-mode {
+  background-color: black;
+  color: white;
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: unset;
+}
+
+.darkmode-label {
+  display: inline-block;
+  background-color: #fff; /* same as buttonColorLight */
+  color: #100f2c; /* opposite of buttonColorDark */
+  mix-blend-mode: difference;
+  padding: 4px;
+  border-radius: 50%;
+}

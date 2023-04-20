@@ -25,3 +25,12 @@
   right: 0;
   bottom: unset;
 }
+
+.darkmode-label {
+  display: inline-block;
+  background-color: #fff; /* same as buttonColorLight */
+  color: #100f2c; /* opposite of buttonColorDark */
+  mix-blend-mode: difference;
+  padding: 4px;
+  border-radius: 50%;
+}
