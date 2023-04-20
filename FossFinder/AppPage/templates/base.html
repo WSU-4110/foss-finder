@@ -1,15 +1,16 @@
-
 {% load static %}
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 <head>
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.7/css/all.css">
+  <link rel="stylesheet" type="text/css" href=" {% static 'css/styles.css'} ">
+  <link rel="png" type="image/png" href = " {% static 'img/FOSSGUY2.png' %} ">
   <style>
   body {
       padding-top: 90px; /* Replace 70px with the height of your navigation bar */
     }
-	.navbar {
-	box-shadow: 0 2px 4px rgba(0,0,0,.5);
+  .navbar {
+    box-shadow: 0 2px 4px rgba(0,0,0,.5);
   }
   </style>
 
@@ -35,49 +36,29 @@
             <li class="nav-item active">
               <a class="nav-link" href="{% url 'bug_submit' %}">Report Bugs</a>
             </li>
+            <li><button onclick="toggleDarkMode()"><i id="darkmode-icon" class="fa fa-moon"></i></button></li>
           </ul>
-       
-    <script>
-      function addDarkmodeWidget(){
-        new Darkmode().showWidget();
-    
-      }
-      window.addEventListener('load', addDarkmodeWidget);
-      </script>
-       <body> 
-       <div id="theme-btn" class="far fa-moon"></div>
-        <script>
-          const themeBtn = document.getElementById("theme-btn"); 
-          const darkTheme = document.getElementById(".dark-theme");
-          themeBtn.onclick = () =>{
-            themeBtn.classList.toggle("fa-sun");
-            if(themeBtn.classList.contains("fa-sun")){
-              document.body.classList.add("changeTheme");
-              for(const theme of darkTheme){
-                theme.style.backgroundColor= "##5A5A5A";
-                theme.style.color= "#eee";
-              }
-            }
-            else{
-              document.body.classList.remove("changeTheme");
-              for(const theme of darkTheme){
-                theme.style.backgroundColor = "#eee";
-                theme.style.color = "#5A5A5A";
-              }
-            }
-          }
-          */
-        </script>
-       </body>
-      </nav>
-<div class="container .dark-theme">
+      </div>
+    </div>
+</nav>
+
+<div class="container">
   {% block page_content %} {% endblock %}
 </div>
+
 <script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-   </body>
+<script>
+  var darkmode = new Darkmode();
+  
+  function toggleDarkMode(){
+    if(darkmode.isActivated()){
+      document.getElementById("darkmode-icon").className = "fa fa-moon";
+    }
+    else{
+      document.getElementById("darkmode-icon").className = "fa fa-sun";
+    }
+    darkmode.toggle();
+  }
+</script>
 
-
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRV

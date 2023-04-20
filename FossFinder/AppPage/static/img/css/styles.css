@@ -1,0 +1,19 @@
+
+#theme-btn {
+font-size: 1.5rem;
+cursor: pointer;
+color: #596AFF;
+}
+
+#theme-btn:hover {
+color: #BB86FC;
+}
+body.changeTheme {
+background-color: #5A5A5A !important;
+color: #eee;
+}
+.dark-mode{
+background-color: black;
+color: white;
+}
+
