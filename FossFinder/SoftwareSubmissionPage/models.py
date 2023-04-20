@@ -26,3 +26,4 @@ class SubmittedSoftware(models.Model):
 
 
     image = models.URLField(max_length=200)
+    dlLink = models.URLField(max_length=200)
