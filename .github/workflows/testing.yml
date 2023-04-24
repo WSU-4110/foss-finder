@@ -32,7 +32,7 @@ jobs:
       run: |
         pip install coverage
         coverage run manage.py test
-        coverage report
+        Coverage report
     - name: Django Testing
         #Jack's tests
         def test_created_Software(self):
