@@ -28,12 +28,12 @@ jobs:
       run: |
         pip install flake8
         flake8
-    -name: Coverage report
+    - name: Coverage report
       run: |
         pip install coverage
         coverage run manage.py test
         coverage report
-    -name: Django Testing
+        -name: Django Testing
       run: |
         #Jack's tests
         def test_created_Software(self):
@@ -48,18 +48,18 @@ jobs:
             'Communication': x.tag_Communication, 'Multimedia': x.tag_Multimedia, 'AntiVirus': x.tag_AntiVirus, 'Code Editor': x.tag_CodeEditor, 
             'Disk Burner': x.tag_DiskBurner, 'File Sharing': x.tag_FileShare, 'Other': x.tag_Other, 'Windows': x.os_WIN, 
             'Mac OS X': x.os_MAC, 'Linux': x.os_NIX, 'image': x.image,}
-          form = SubmitSoftwareForm(data=data)
-          self.assertFalse(form.is_valid())
+            form = SubmitSoftwareForm(data=data)
+            self.assertFalse(form.is_valid())
 
         def test_form_invalid(self):
           x = SubmittedSoftware.objects.create(name='name test', developer='dev test', description='desc test', tag_WordProcesser=True, tag_SpreadSheet=True, tag_GraphicsEditor=False, tag_AudioEditor=False, tag_Communication=False, tag_Multimedia=False, tag_AntiVirus=False, tag_CodeEditor=False, tag_DiskBurner=False, tag_FileShare=False, tag_Other=False, os_WIN=True, os_MAC=False, os_NIX=False, image="img/audacity.png")
-          data = {'name': x.name, 'developer': x.developer, 'description': x.description, 'Word Processer': x.tag_WordProcesser, 
+            data = {'name': x.name, 'developer': x.developer, 'description': x.description, 'Word Processer': x.tag_WordProcesser, 
             'Spreadsheet Editor': x.tag_SpreadSheet, 'Graphics Editor': x.tag_GraphicsEditor, 'Audio Editor': x.tag_AudioEditor, 
             'Communication': x.tag_Communication, 'Multimedia': x.tag_Multimedia, 'AntiVirus': x.tag_AntiVirus, 'Code Editor': x.tag_CodeEditor, 
             'Disk Burner': x.tag_DiskBurner, 'File Sharing': x.tag_FileShare, 'Other': x.tag_Other, 'Windows': x.os_WIN, 
             'Mac OS X': x.os_MAC, 'Linux': x.os_NIX, 'image': x.image,}
-          form = SubmitSoftwareForm(data=data)
-          self.assertFalse(form.is_valid())
+            form = SubmitSoftwareForm(data=data)
+            self.assertFalse(form.is_valid())
 
         def test_software_submit_button(self):
           self.driver = webdriver.Firefox()
