@@ -22,13 +22,13 @@ class SubmitBugsFormTest(TestCase):
         form.save()
         self.assertEqual(SubmittedBugs.objects.count(), 1)
         
-        def invalid_test(self):
-    form_data = {
+    def invalid_test(self):
+        form_data = {
         'description': 'This is a test bug report.',
         'image': self.test_image,
     }
-    form = SubmitBugsForm(data=form_data, files=self.form_files)
-    self.assertFalse(form.is_valid())
-    self.assertEqual(len(form.errors), 1)
-    self.assertIn('title', form.errors)
+        form = SubmitBugsForm(data=form_data, files=self.form_files)
+        self.assertFalse(form.is_valid())
+        self.assertEqual(len(form.errors), 1)
+        self.assertIn('title', form.errors)
 
