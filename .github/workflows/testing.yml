@@ -222,3 +222,44 @@ jobs:
           form = SubmitBugsForm(data=form_data, files=form_data)
           self.assertFalse(form.is_valid())
 
+
+        #Ethan's Assignment 5 unit test code
+        
+        """Dog Test"""
+        def test_get_image_filename_from_url(self):
+            image_url = 'https://picsum.photos/id/237/200/300.jpg'
+            filename = ImageUrlParser.get_image_filename_from_url(image_url)
+            self.assertEqual(filename, '300.jpg')
+
+        """Ice Test"""
+        def test_is_valid_image_url(self):
+            valid_image_url = 'https://picsum.photos/seed/picsum/200/300.jpg'
+            invalid_image_url = 'https://example.com/files/document.pdf'
+            self.assertTrue(ImageUrlParser.is_valid_image_url(valid_image_url))
+            self.assertFalse(ImageUrlParser.is_valid_image_url(invalid_image_url))
+
+        """Extension Test"""
+        def test_get_image_extension_from_url(self):
+            image_url = 'https://picsum.photos/200/300.jpg'
+            extension = ImageUrlParser.get_image_extension_from_url(image_url)
+            self.assertEqual(extension, '.jpg')
+
+        """Dog Test for External Image"""
+        def test_is_external_image_url(self):
+            external_image_url = 'https://picsum.photos/id/237/200/300.jpg'
+            internal_image_url = '/images/image.jpg'
+            self.assertTrue(ImageUrlParser.is_external_image_url(external_image_url))
+            self.assertFalse(ImageUrlParser.is_external_image_url(internal_image_url))
+
+        """Dog Test for acquiring Image Domain"""
+        def test_get_image_domain(self):
+            image_url = 'https://picsum.photos/id/237/200/300.jpg'
+            domain = ImageUrlParser.get_image_domain(image_url)
+            self.assertEqual(domain, 'picsum.photos')
+
+        """Dog Test for Ensuring Image URL is Secure"""
+        def test_is_secure_image_url(self):
+            secure_image_url = 'https://picsum.photos/seed/picsum/200/300.jpg'
+            insecure_image_url = 'http://picsum.photos/seed/picsum/200/300.jpg'
+            self.assertTrue(ImageUrlParser.is_secure_image_url(secure_image_url))
+            self.assertFalse(ImageUrlParser.is_secure_image_url(insecure_image_url))
